@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG irl</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container__header">
+      <header>
+        <h1 class="brand__header">RPG_irl</h1>
+
+        <nav class="navbar">
+          <a href="#">Main</a>
+          <a href="#">Create</a>
+          <a href="#">Load</a>
+          <a href="#">WIKI</a>
+          <button type="submit">Sign In</button>
+          <input type="email" id="sign-in" placeholder="username..." />
+        </nav>
+      </header>
+    </div>
+    <div class="modal hidden" id="modal">
+      <div class="modal__content">
+        <span class="close" id="close-modal">&times;</span>
+        <h4 id="strengthelp">Strength</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, cum
+          inventore soluta minima, vitae itaque voluptatibus deleniti fugit
+          praesentium, autem fugiat cumque quidem sed voluptatem dolorum
+          commodi. Totam, laborum perspiciatis.
+        </p>
+        <h4 id="agility-help">Agility</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
+          nesciunt, nostrum accusamus error corrupti, assumenda sed
+          reprehenderit sunt illum eius consequatur ratione commodi odio
+          obcaecati est soluta voluptatem. Quisquam, dolorum!
+        </p>
+        <h4 id="endurance-help">Endurance</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
+          eveniet vitae voluptates assumenda voluptatibus commodi neque, libero
+          repudiandae ducimus atque, quod dolorem fugit incidunt accusamus eos
+          vel id, itaque totam!
+        </p>
+        <h4 id="wisdom-help">Wisdom</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          incidunt accusamus, tempore doloribus debitis eligendi ab, unde
+          repudiandae nemo blanditiis deleniti consequuntur quasi voluptatibus
+          doloremque, recusandae ipsum? Beatae, corporis sunt.
+        </p>
+        <h4 id="personality-help">Personality</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          corporis architecto reiciendis perferendis assumenda consequuntur cum
+          nemo ad nam iure maxime dolorum distinctio, reprehenderit a soluta
+          atque modi enim tempore.
+        </p>
+      </div>
+    </div>
+    <main class="char__screen">
+      <section class="char_screen_stats">
+        <h3>Characater Stats</h3>
+        <div class="expendable__points">
+          <label>Points to spend:</label>
+          <p>5</p>
+        </div>
+        <!--====================================-->
+        <!--===============Strength===============-->
+        <!--====================================-->
+        <div class="statContainer strength">
+          <div class="stat_class" id="strength_title">Strength</div>
+          <div class="stat_value">
+            <div
+              class="user_input_container"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              "
+            >
+              <button class="statInfoButton" id="strength-modal">❔</button>
+              <input type="number" value="0" min max="10" id="strengthValue" />
+              <div class="incrementButtons">
+                <button
+                  style="margin-left: 10px"
+                  class="strength"
+                  onclick="statBtnIncrease(event.target.className)"
+                >
+                  ➕
+                </button>
+                <button
+                  class="strength"
+                  onclick="statBtnDecrease(event.target.className)"
+                >
+                  ➖
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--====================================-->
+        <!--===============Endurance===============-->
+        <!--====================================-->
+        <div class="statContainer endo">
+          <div class="stat_class" id="endurance">Endurance</div>
+          <div class="stat_value">
+            <div
+              class="user_input_container"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              "
+            >
+              <button class="statInfoButton" id="endo-modal">❔</button>
+              <input type="number" value="0" size="2" id="endoValue" />
+              <div class="incrementButtons">
+                <button
+                  style="margin-left: 10px"
+                  class="endo"
+                  onclick="statBtnIncrease(event.target.className)"
+                >
+                  ➕
+                </button>
+                <button
+                  class="endo"
+                  onclick="statBtnDecrease(event.target.className)"
+                >
+                  ➖
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--====================================-->
+        <!--===============Agility===============-->
+        <!--====================================-->
+        <div class="statContainer agility">
+          <div class="stat_class" id="agility">Agility</div>
+          <div class="stat_value">
+            <div
+              class="user_input_container"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              "
+            >
+              <button class="statInfoButton" id="agility-modal">❔</button>
+              <input type="number" value="0" size="2" id="agilityValue" />
+              <div class="incrementButtons">
+                <button
+                  style="margin-left: 10px"
+                  class="agility"
+                  onclick="statBtnIncrease(event.target.className)"
+                >
+                  ➕
+                </button>
+                <button
+                  class="agility"
+                  onclick="statBtnDecrease(event.target.className)"
+                >
+                  ➖
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--====================================-->
+        <!--===============Wisdom===============-->
+        <!--====================================-->
+        <div class="statContainer wisdom">
+          <div class="stat_class" id="wisdom">Wisdom</div>
+          <div class="stat_value">
+            <div
+              class="user_input_container"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              "
+            >
+              <button class="statInfoButton" id="wisdom-modal">❔</button>
+              <input type="number" value="0" size="2" id="wisdomValue" />
+              <div class="incrementButtons">
+                <button
+                  style="margin-left: 10px"
+                  class="wisdom"
+                  onclick="statBtnIncrease(event.target.className)"
+                >
+                  ➕
+                </button>
+                <button
+                  class="wisdom"
+                  onclick="statBtnDecrease(event.target.className)"
+                >
+                  ➖
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--====================================-->
+        <!--===============Personality===============-->
+        <!--====================================-->
+        <div class="statContainer personality">
+          <div class="stat_class" id="personality">Personality</div>
+          <div class="stat_value">
+            <div
+              class="user_input_container"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              "
+            >
+              <button class="statInfoButton" id="personality-modal">❔</button>
+              <input type="number" value="0" size="2" id="personalityValue" />
+              <div class="incrementButtons">
+                <button
+                  style="margin-left: 10px"
+                  class="personality"
+                  onclick="statBtnIncrease(event.target.className)"
+                >
+                  ➕
+                </button>
+                <button
+                  class="personality"
+                  onclick="statBtnDecrease(event.target.className)"
+                >
+                  ➖
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="char__screen_avatar">
+        <img
+          src="./dev_data/sprite-8-bit-character.png"
+          alt="character sprite"
+          width="44%"
+        />
+      </aside>
+    </main>
+  </body>
+  <script src="./script.js"></script>
+</html>
